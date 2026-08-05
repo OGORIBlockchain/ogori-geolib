@@ -1,6 +1,6 @@
 {
   "name": "ogori-geolib",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "On-chain point-in-polygon and haversine distance verification for agri-food traceability (research artifact)",
   "license": "MIT",
   "private": true,
