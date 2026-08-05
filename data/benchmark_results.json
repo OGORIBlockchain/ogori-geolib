@@ -1,0 +1,481 @@
+{
+  "deployGas": "1135397",
+  "sweep": [
+    {
+      "vertices": 4,
+      "registerGas": 249514,
+      "verifyInsideGas": 53958,
+      "verifyOutsideGas": 229428,
+      "outsideDistanceMetres": 600
+    },
+    {
+      "vertices": 6,
+      "registerGas": 339674,
+      "verifyInsideGas": 64423,
+      "verifyOutsideGas": 328560,
+      "outsideDistanceMetres": 600
+    },
+    {
+      "vertices": 12,
+      "registerGas": 610154,
+      "verifyInsideGas": 95834,
+      "verifyOutsideGas": 626259,
+      "outsideDistanceMetres": 600
+    },
+    {
+      "vertices": 17,
+      "registerGas": 835548,
+      "verifyInsideGas": 122002,
+      "verifyOutsideGas": 874495,
+      "outsideDistanceMetres": 600
+    },
+    {
+      "vertices": 24,
+      "registerGas": 1151066,
+      "verifyInsideGas": 158642,
+      "verifyOutsideGas": 1221640,
+      "outsideDistanceMetres": 600
+    },
+    {
+      "vertices": 32,
+      "registerGas": 1511706,
+      "verifyInsideGas": 200521,
+      "verifyOutsideGas": 1618513,
+      "outsideDistanceMetres": 600
+    }
+  ],
+  "field": [
+    {
+      "lot": "BaSao",
+      "event": 1,
+      "systemMetres": 26,
+      "onchainMetres": 25,
+      "inside": false,
+      "tier": 0,
+      "deltaMetres": -1
+    },
+    {
+      "lot": "BaSao",
+      "event": 2,
+      "systemMetres": 10,
+      "onchainMetres": 10,
+      "inside": false,
+      "tier": 0,
+      "deltaMetres": 0
+    },
+    {
+      "lot": "BaSao",
+      "event": 3,
+      "systemMetres": 0,
+      "onchainMetres": 0,
+      "inside": true,
+      "tier": 0,
+      "deltaMetres": 0
+    },
+    {
+      "lot": "BaSao",
+      "event": 4,
+      "systemMetres": 12,
+      "onchainMetres": 11,
+      "inside": false,
+      "tier": 0,
+      "deltaMetres": -1
+    },
+    {
+      "lot": "BaSao",
+      "event": 5,
+      "systemMetres": 0,
+      "onchainMetres": 0,
+      "inside": true,
+      "tier": 0,
+      "deltaMetres": 0
+    },
+    {
+      "lot": "BaSao",
+      "event": 6,
+      "systemMetres": 0,
+      "onchainMetres": 0,
+      "inside": true,
+      "tier": 0,
+      "deltaMetres": 0
+    },
+    {
+      "lot": "BaSao",
+      "event": 7,
+      "systemMetres": 0,
+      "onchainMetres": 0,
+      "inside": true,
+      "tier": 0,
+      "deltaMetres": 0
+    },
+    {
+      "lot": "BaSao",
+      "event": 8,
+      "systemMetres": 0,
+      "onchainMetres": 0,
+      "inside": true,
+      "tier": 0,
+      "deltaMetres": 0
+    },
+    {
+      "lot": "BaSao",
+      "event": 9,
+      "systemMetres": 0,
+      "onchainMetres": 0,
+      "inside": true,
+      "tier": 0,
+      "deltaMetres": 0
+    },
+    {
+      "lot": "BaSao",
+      "event": 10,
+      "systemMetres": 26,
+      "onchainMetres": 25,
+      "inside": false,
+      "tier": 0,
+      "deltaMetres": -1
+    },
+    {
+      "lot": "BaSao",
+      "event": 11,
+      "systemMetres": 0,
+      "onchainMetres": 0,
+      "inside": true,
+      "tier": 0,
+      "deltaMetres": 0
+    },
+    {
+      "lot": "BaSao",
+      "event": 12,
+      "systemMetres": 0,
+      "onchainMetres": 0,
+      "inside": true,
+      "tier": 0,
+      "deltaMetres": 0
+    },
+    {
+      "lot": "BaSao",
+      "event": 13,
+      "systemMetres": 17,
+      "onchainMetres": 17,
+      "inside": false,
+      "tier": 0,
+      "deltaMetres": 0
+    },
+    {
+      "lot": "BaSao",
+      "event": 14,
+      "systemMetres": 17,
+      "onchainMetres": 17,
+      "inside": false,
+      "tier": 0,
+      "deltaMetres": 0
+    },
+    {
+      "lot": "BaSao",
+      "event": 15,
+      "systemMetres": 0,
+      "onchainMetres": 0,
+      "inside": true,
+      "tier": 0,
+      "deltaMetres": 0
+    },
+    {
+      "lot": "BaSao",
+      "event": 16,
+      "systemMetres": 0,
+      "onchainMetres": 0,
+      "inside": true,
+      "tier": 0,
+      "deltaMetres": 0
+    },
+    {
+      "lot": "BaSao",
+      "event": 17,
+      "systemMetres": 26,
+      "onchainMetres": 26,
+      "inside": false,
+      "tier": 0,
+      "deltaMetres": 0
+    },
+    {
+      "lot": "BaSao",
+      "event": 18,
+      "systemMetres": 0,
+      "onchainMetres": 0,
+      "inside": true,
+      "tier": 0,
+      "deltaMetres": 0
+    },
+    {
+      "lot": "BaSao",
+      "event": 19,
+      "systemMetres": 0,
+      "onchainMetres": 0,
+      "inside": true,
+      "tier": 0,
+      "deltaMetres": 0
+    },
+    {
+      "lot": "BaSao",
+      "event": 20,
+      "systemMetres": 0,
+      "onchainMetres": 0,
+      "inside": true,
+      "tier": 0,
+      "deltaMetres": 0
+    },
+    {
+      "lot": "BaSao",
+      "event": 21,
+      "systemMetres": 0,
+      "onchainMetres": 0,
+      "inside": true,
+      "tier": 0,
+      "deltaMetres": 0
+    },
+    {
+      "lot": "BaSao",
+      "event": 22,
+      "systemMetres": 0,
+      "onchainMetres": 0,
+      "inside": true,
+      "tier": 0,
+      "deltaMetres": 0
+    },
+    {
+      "lot": "DakLak",
+      "event": 1,
+      "systemMetres": 8951,
+      "onchainMetres": 0,
+      "inside": true,
+      "tier": 0,
+      "deltaMetres": -8951
+    },
+    {
+      "lot": "DakLak",
+      "event": 2,
+      "systemMetres": 0,
+      "onchainMetres": 8266,
+      "inside": false,
+      "tier": 2,
+      "deltaMetres": 8266
+    },
+    {
+      "lot": "DakLak",
+      "event": 3,
+      "systemMetres": 0,
+      "onchainMetres": 0,
+      "inside": true,
+      "tier": 0,
+      "deltaMetres": 0
+    },
+    {
+      "lot": "DakLak",
+      "event": 4,
+      "systemMetres": 0,
+      "onchainMetres": 0,
+      "inside": true,
+      "tier": 0,
+      "deltaMetres": 0
+    },
+    {
+      "lot": "DakLak",
+      "event": 5,
+      "systemMetres": 8273,
+      "onchainMetres": 8273,
+      "inside": false,
+      "tier": 2,
+      "deltaMetres": 0
+    },
+    {
+      "lot": "DakLak",
+      "event": 6,
+      "systemMetres": 0,
+      "onchainMetres": 0,
+      "inside": true,
+      "tier": 0,
+      "deltaMetres": 0
+    },
+    {
+      "lot": "DakLak",
+      "event": 7,
+      "systemMetres": 0,
+      "onchainMetres": 0,
+      "inside": true,
+      "tier": 0,
+      "deltaMetres": 0
+    },
+    {
+      "lot": "DakLak",
+      "event": 8,
+      "systemMetres": 0,
+      "onchainMetres": 0,
+      "inside": true,
+      "tier": 0,
+      "deltaMetres": 0
+    },
+    {
+      "lot": "DakLak",
+      "event": 9,
+      "systemMetres": 0,
+      "onchainMetres": 0,
+      "inside": true,
+      "tier": 0,
+      "deltaMetres": 0
+    },
+    {
+      "lot": "DakLak",
+      "event": 10,
+      "systemMetres": 0,
+      "onchainMetres": 0,
+      "inside": true,
+      "tier": 0,
+      "deltaMetres": 0
+    },
+    {
+      "lot": "DakLak",
+      "event": 11,
+      "systemMetres": 0,
+      "onchainMetres": 0,
+      "inside": true,
+      "tier": 0,
+      "deltaMetres": 0
+    },
+    {
+      "lot": "DakLak",
+      "event": 12,
+      "systemMetres": 260417,
+      "onchainMetres": 260417,
+      "inside": false,
+      "tier": 2,
+      "deltaMetres": 0
+    },
+    {
+      "lot": "DakLak",
+      "event": 13,
+      "systemMetres": 260435,
+      "onchainMetres": 260435,
+      "inside": false,
+      "tier": 2,
+      "deltaMetres": 0
+    },
+    {
+      "lot": "DakLak",
+      "event": 14,
+      "systemMetres": 0,
+      "onchainMetres": 0,
+      "inside": true,
+      "tier": 0,
+      "deltaMetres": 0
+    },
+    {
+      "lot": "DakLak",
+      "event": 15,
+      "systemMetres": 0,
+      "onchainMetres": 0,
+      "inside": true,
+      "tier": 0,
+      "deltaMetres": 0
+    },
+    {
+      "lot": "DakLak",
+      "event": 16,
+      "systemMetres": 0,
+      "onchainMetres": 0,
+      "inside": true,
+      "tier": 0,
+      "deltaMetres": 0
+    },
+    {
+      "lot": "DakLak",
+      "event": 17,
+      "systemMetres": 0,
+      "onchainMetres": 0,
+      "inside": true,
+      "tier": 0,
+      "deltaMetres": 0
+    },
+    {
+      "lot": "DakLak",
+      "event": 18,
+      "systemMetres": 0,
+      "onchainMetres": 0,
+      "inside": true,
+      "tier": 0,
+      "deltaMetres": 0
+    },
+    {
+      "lot": "DakLak",
+      "event": 19,
+      "systemMetres": 0,
+      "onchainMetres": 0,
+      "inside": true,
+      "tier": 0,
+      "deltaMetres": 0
+    },
+    {
+      "lot": "NutriGreen",
+      "event": 1,
+      "systemMetres": 51,
+      "onchainMetres": 51,
+      "inside": false,
+      "tier": 1,
+      "deltaMetres": 0
+    },
+    {
+      "lot": "NutriGreen",
+      "event": 2,
+      "systemMetres": 19,
+      "onchainMetres": 19,
+      "inside": false,
+      "tier": 0,
+      "deltaMetres": 0
+    },
+    {
+      "lot": "NutriGreen",
+      "event": 3,
+      "systemMetres": 25,
+      "onchainMetres": 24,
+      "inside": false,
+      "tier": 0,
+      "deltaMetres": -1
+    }
+  ],
+  "lens": {
+    "deployGas": 100957,
+    "publishGas": 24518
+  },
+  "agreement": {
+    "perLot": {
+      "BaSao": {
+        "events": 22,
+        "containmentAgreement": 22,
+        "meanAbsDeltaMetres": 0.136,
+        "maxAbsDeltaMetres": 1,
+        "outsideEvents": 7
+      },
+      "NutriGreen": {
+        "events": 3,
+        "containmentAgreement": 3,
+        "meanAbsDeltaMetres": 0.333,
+        "maxAbsDeltaMetres": 1,
+        "outsideEvents": 3
+      },
+      "DakLak": {
+        "events": 19,
+        "containmentAgreement": 17,
+        "meanAbsDeltaMetres": 906.158,
+        "maxAbsDeltaMetres": 8951,
+        "outsideEvents": 4
+      }
+    },
+    "stableBoundarySubset": {
+      "events": 25,
+      "containmentAgreement": 25,
+      "meanAbsDeltaMetres": 0.16,
+      "maxAbsDeltaMetres": 1,
+      "outsideEvents": 10
+    }
+  }
+}

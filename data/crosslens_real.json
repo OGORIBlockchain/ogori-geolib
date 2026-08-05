@@ -1,0 +1,202 @@
+[
+ {
+  "lot": "BaSao",
+  "event": 1,
+  "d": 26,
+  "producer": "G",
+  "eudr": "G",
+  "cb": "Y"
+ },
+ {
+  "lot": "BaSao",
+  "event": 2,
+  "d": 10,
+  "producer": "G",
+  "eudr": "G",
+  "cb": "G"
+ },
+ {
+  "lot": "BaSao",
+  "event": 3,
+  "d": 0,
+  "producer": "G",
+  "eudr": "G",
+  "cb": "G"
+ },
+ {
+  "lot": "BaSao",
+  "event": 4,
+  "d": 12,
+  "producer": "G",
+  "eudr": "G",
+  "cb": "G"
+ },
+ {
+  "lot": "BaSao",
+  "event": 5,
+  "d": 0,
+  "producer": "G",
+  "eudr": "G",
+  "cb": "G"
+ },
+ {
+  "lot": "BaSao",
+  "event": 6,
+  "d": 0,
+  "producer": "G",
+  "eudr": "G",
+  "cb": "G"
+ },
+ {
+  "lot": "BaSao",
+  "event": 7,
+  "d": 0,
+  "producer": "G",
+  "eudr": "G",
+  "cb": "G"
+ },
+ {
+  "lot": "BaSao",
+  "event": 8,
+  "d": 0,
+  "producer": "G",
+  "eudr": "G",
+  "cb": "G"
+ },
+ {
+  "lot": "BaSao",
+  "event": 9,
+  "d": 0,
+  "producer": "G",
+  "eudr": "G",
+  "cb": "G"
+ },
+ {
+  "lot": "BaSao",
+  "event": 10,
+  "d": 26,
+  "producer": "G",
+  "eudr": "G",
+  "cb": "Y"
+ },
+ {
+  "lot": "BaSao",
+  "event": 11,
+  "d": 0,
+  "producer": "G",
+  "eudr": "G",
+  "cb": "G"
+ },
+ {
+  "lot": "BaSao",
+  "event": 12,
+  "d": 0,
+  "producer": "G",
+  "eudr": "G",
+  "cb": "G"
+ },
+ {
+  "lot": "BaSao",
+  "event": 13,
+  "d": 17,
+  "producer": "G",
+  "eudr": "G",
+  "cb": "G"
+ },
+ {
+  "lot": "BaSao",
+  "event": 14,
+  "d": 17,
+  "producer": "G",
+  "eudr": "G",
+  "cb": "G"
+ },
+ {
+  "lot": "BaSao",
+  "event": 15,
+  "d": 0,
+  "producer": "G",
+  "eudr": "G",
+  "cb": "G"
+ },
+ {
+  "lot": "BaSao",
+  "event": 16,
+  "d": 0,
+  "producer": "G",
+  "eudr": "G",
+  "cb": "G"
+ },
+ {
+  "lot": "BaSao",
+  "event": 17,
+  "d": 26,
+  "producer": "G",
+  "eudr": "G",
+  "cb": "Y"
+ },
+ {
+  "lot": "BaSao",
+  "event": 18,
+  "d": 0,
+  "producer": "G",
+  "eudr": "G",
+  "cb": "G"
+ },
+ {
+  "lot": "BaSao",
+  "event": 19,
+  "d": 0,
+  "producer": "G",
+  "eudr": "G",
+  "cb": "G"
+ },
+ {
+  "lot": "BaSao",
+  "event": 20,
+  "d": 0,
+  "producer": "G",
+  "eudr": "G",
+  "cb": "G"
+ },
+ {
+  "lot": "BaSao",
+  "event": 21,
+  "d": 0,
+  "producer": "G",
+  "eudr": "G",
+  "cb": "G"
+ },
+ {
+  "lot": "BaSao",
+  "event": 22,
+  "d": 0,
+  "producer": "G",
+  "eudr": "G",
+  "cb": "G"
+ },
+ {
+  "lot": "NutriGreen",
+  "event": 1,
+  "d": 51,
+  "producer": "Y",
+  "eudr": "Y",
+  "cb": "R"
+ },
+ {
+  "lot": "NutriGreen",
+  "event": 2,
+  "d": 19,
+  "producer": "G",
+  "eudr": "G",
+  "cb": "G"
+ },
+ {
+  "lot": "NutriGreen",
+  "event": 3,
+  "d": 25,
+  "producer": "G",
+  "eudr": "G",
+  "cb": "Y"
+ }
+]

@@ -1,0 +1,22 @@
+{
+  "name": "ogori-geolib",
+  "version": "1.0.0",
+  "description": "On-chain point-in-polygon and haversine distance verification for agri-food traceability (research artifact)",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "build": "hardhat compile",
+    "bench": "hardhat run test/benchmark.js",
+    "bench:client": "node test/latency_client.mjs"
+  },
+  "devDependencies": {
+    "hardhat": "2.22.15",
+    "@nomicfoundation/hardhat-ethers": "3.0.8",
+    "ethers": "^6.13.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/OGORIBlockchain/ogori-geolib"
+  },
+  "author": "Nguyen Duy Quan"
+}

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>OGORI Audit-Lens — client-side re-assessment benchmark</title>
+<style>
+  body{font:14px/1.55 -apple-system,Segoe UI,Roboto,sans-serif;max-width:760px;margin:32px auto;padding:0 18px;color:#1a1a1a}
+  h1{font-size:19px;margin:0 0 4px} p.sub{color:#666;margin:0 0 22px;font-size:13px}
+  button{font:15px inherit;padding:11px 22px;border:0;border-radius:7px;background:#1F3A5F;color:#fff;cursor:pointer}
+  button:disabled{background:#9aa5b1;cursor:default}
+  #out{white-space:pre-wrap;background:#f6f7f9;border:1px solid #e2e5e9;border-radius:7px;padding:14px;margin-top:18px;font:12.5px/1.5 ui-monospace,Menlo,Consolas,monospace;min-height:40px}
+  #copy{margin-top:10px;background:#B08A2B;display:none}
+  .env{color:#666;font-size:12px;margin-top:14px}
+</style>
+<h1>Client-side re-assessment benchmark</h1>
+<p class="sub">Đo chi phí tính lại phân loại khoảng cách cho 25 sự kiện thật dưới 3 lens.
+Chạy hoàn toàn trong trình duyệt, không gửi dữ liệu đi đâu. Mở file này trên máy tính và trên điện thoại, bấm nút, rồi gửi lại kết quả.</p>
+
+<button id="go">Chạy đo (1.000 lượt)</button>
+<button id="copy">Sao chép kết quả</button>
+<div id="out">Sẵn sàng.</div>
+<div class="env" id="env"></div>
+
+<script>
+// ---- dữ liệu thật: 25 sự kiện của hai lô có ranh giới ổn định -------------
+const PLOTS = {
+  BaSao: [[105.70292361080647,10.601319151894387],[105.70253969408132,10.601195988492107],
+          [105.70206435361694,10.600981787303617],[105.70155852640152,10.600693906398113],
+          [105.70118985869408,10.600389553226737],[105.70086694147846,10.600011276905394],
+          [105.70062165822682,10.599567650253442],[105.70048433033675,10.599098539112543],
+          [105.70046907224285,10.598588137316633],[105.70058066108772,10.598054017570396],
+          [105.70085168452561,10.597544433566139],[105.70127225621204,10.597100746583213],
+          [105.70180862060755,10.596747873432852],[105.70243546340118,10.596509265203063],
+          [105.70311382240064,10.596394283246255],[105.70380504338266,10.596410078900956],
+          [105.70447053930887,10.596556355842527]],
+  NutriGreen: [[105.705549,9.991611],[105.70582810789348,9.991596614825331],
+               [105.70576775819063,9.991312980577208],[105.70547204464675,9.991380669797438]]
+};
+// [lô, vĩ độ, kinh độ] — 22 sự kiện Ba Sao + 3 sự kiện NutriGreen
+const EV = [
+ ["BaSao",10.59378563139132,105.70163152550757],["BaSao",10.593676790809319,105.70146494948521],
+ ["BaSao",10.5973,105.7005],["BaSao",10.5972,105.7002],["BaSao",10.5975,105.7008],
+ ["BaSao",10.5977,105.7011],["BaSao",10.5979,105.7014],["BaSao",10.5981,105.7017],
+ ["BaSao",10.5983,105.702],["BaSao",10.59379,105.70164],["BaSao",10.5985,105.7023],
+ ["BaSao",10.5987,105.7026],["BaSao",10.5966,105.6998],["BaSao",10.5965,105.6997],
+ ["BaSao",10.5989,105.7029],["BaSao",10.5991,105.7032],["BaSao",10.59377,105.70162],
+ ["BaSao",10.5993,105.7035],["BaSao",10.5995,105.7038],["BaSao",10.5997,105.7041],
+ ["BaSao",10.5999,105.7044],["BaSao",10.6001,105.7047],
+ ["NutriGreen",9.991209125109066,105.7062250295973],
+ ["NutriGreen",9.991506443290325,105.70598799837731],
+ ["NutriGreen",9.991429798315844,105.70602404345156]
+];
+const LENS = [[50,100],[30,80],[20,50]];
+
+// ---- cùng thuật toán với GeoLib.sol, chạy ở double precision -------------
+const R=6371008, rad=d=>d*Math.PI/180;
+const hav=(a,b)=>{const dp=rad(b.lat-a.lat)/2, dl=rad(b.lon-a.lon)/2;
+  const x=Math.sin(dp)**2+Math.cos(rad(a.lat))*Math.cos(rad(b.lat))*Math.sin(dl)**2;
+  return 2*R*Math.asin(Math.sqrt(x));};
+const toPts=v=>v.map(([lon,lat])=>({lat,lon}));
+function contains(q,poly){let c=false;
+  for(let i=0,n=poly.length;i<n;i++){const a=poly[i],b=poly[(i+1)%n];
+    if((a.lon>q.lon)!==(b.lon>q.lon)){
+      const cr=(b.lat-a.lat)*(q.lon-a.lon)-(b.lon-a.lon)*(q.lat-a.lat);
+      if(b.lon>a.lon?cr>0:cr<0)c=!c;}}
+  return c;}
+function distSeg(q,a,b){const mLat=Math.PI*R/180, mLon=mLat*Math.cos(rad(q.lat));
+  const ax=(a.lon-q.lon)*mLon, ay=(a.lat-q.lat)*mLat;
+  const dx=(b.lon-q.lon)*mLon-ax, dy=(b.lat-q.lat)*mLat-ay;
+  const dd=dx*dx+dy*dy; let t=dd===0?0:((-ax*dx-ay*dy)/dd);
+  t=Math.max(0,Math.min(1,t));
+  return hav(q,{lat:a.lat+(b.lat-a.lat)*t, lon:a.lon+(b.lon-a.lon)*t});}
+function locate(q,poly){if(contains(q,poly))return 0;
+  let best=Infinity;
+  for(let i=0,n=poly.length;i<n;i++)best=Math.min(best,distSeg(q,poly[i],poly[(i+1)%n]));
+  return best;}
+
+const P={BaSao:toPts(PLOTS.BaSao),NutriGreen:toPts(PLOTS.NutriGreen)};
+function pass(){let acc=0;
+  for(const [lot,lat,lon] of EV){const d=locate({lat,lon},P[lot]);
+    for(const [g,y] of LENS) acc += d<=g?0:(d<=y?1:2);}
+  return acc;}
+
+// Chrome làm tròn performance.now() xuống bậc ~100 us để chống Spectre, nên một
+// lượt đơn lẻ nằm dưới ngưỡng đo được. Mỗi mẫu vì vậy gộp BATCH lượt rồi chia ra,
+// đưa thời gian mỗi mẫu lên hàng chục mili-giây, cao hơn hẳn bậc làm tròn.
+const BATCH = 200, SAMPLES = 200, WARMUP = 400;
+
+let RESULT="";
+document.getElementById('go').onclick=()=>{
+  const btn=document.getElementById('go'), out=document.getElementById('out');
+  btn.disabled=true; out.textContent="Đang khởi động JIT...";
+  setTimeout(()=>{
+    for(let i=0;i<WARMUP;i++) pass();
+    const t=[]; let sink=0;
+    for(let s=0;s<SAMPLES;s++){
+      const t0=performance.now();
+      for(let b=0;b<BATCH;b++) sink+=pass();
+      t.push((performance.now()-t0)/BATCH);      // ms cho mỗi lượt đầy đủ
+    }
+    t.sort((a,b)=>a-b);
+    const mean=t.reduce((a,b)=>a+b)/SAMPLES;
+    const sd=Math.sqrt(t.reduce((a,b)=>a+(b-mean)**2,0)/(SAMPLES-1));
+    const res=Math.min(...t.filter(v=>v>0))*BATCH;   // bậc làm tròn quan sát được
+    RESULT=
+`OGORI client-side re-assessment benchmark
+events              : ${EV.length}   lenses: ${LENS.length}
+design              : ${SAMPLES} samples x ${BATCH} passes per sample, after ${WARMUP} warm-up passes
+mean per full pass  : ${mean.toFixed(5)} ms
+std deviation       : ${sd.toFixed(5)} ms
+median  (p50)       : ${t[Math.floor(SAMPLES*0.50)].toFixed(5)} ms
+p95                 : ${t[Math.floor(SAMPLES*0.95)].toFixed(5)} ms
+per event per lens  : ${(mean/(EV.length*LENS.length)*1000).toFixed(3)} us
+batch wall time     : ${(mean*BATCH).toFixed(2)} ms per sample (must be >> timer resolution)
+timer granularity   : ~${res.toFixed(3)} ms observed
+checksum            : ${sink}
+device / browser    : ${navigator.userAgent}
+cores (reported)    : ${navigator.hardwareConcurrency||'n/a'}
+timestamp           : ${new Date().toISOString()}`;
+    out.textContent=RESULT;
+    document.getElementById('copy').style.display='inline-block';
+    btn.disabled=false;
+  },30);
+};
+document.getElementById('copy').onclick=()=>{
+  navigator.clipboard.writeText(RESULT).then(()=>{
+    const b=document.getElementById('copy'); b.textContent="Đã sao chép";
+    setTimeout(()=>b.textContent="Sao chép kết quả",1600);
+  });
+};
+document.getElementById('env').textContent=navigator.userAgent;
+</script>
